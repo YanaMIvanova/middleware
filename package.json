@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon --experimental-specifier-resolution=node src/index.js"
   },
   "dependencies": {
     "cors": "2.8.5",
