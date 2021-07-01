@@ -8,25 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/middleware", async (req, res) => {
-  fetch("http://localhost:6000/usernames")
-    .then((res) => res.json())
-    .then((usernames) => res.json(usernames))
-    .catch(console.log);
-});
+const getURL = (baseURL) => `${baseURL}?apitoken=b10e246fa52ca8ce9e68245026e7ebd3a14`;
 
-app.post("/middleware", async (req, res) => {
-  const usernames = { name: `${req.body.name} - enriched` };
-
-  fetch("http://localhost:6000/usernames", {
-    method: "POST",
-    body: JSON.stringify(usernames),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
+app.get("/organizations", async (req, res) => {
+  fetch(getURL('http://localhost/apiv2/organization/list/recursive?page=0&limit=30'))
     .then((res) => res.json())
-    .then((usernames) => res.json(usernames))
+    .then((organizations) => res.json(organizations))
     .catch(console.log);
 });
 
