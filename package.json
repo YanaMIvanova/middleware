@@ -1,4 +1,15 @@
 {
+  "name": "cep-middleware",
+  "version": "1.0.0",
+  "description": "CEP Middleware for PeopleSoft",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=16.4.1",
+    "npm": ">=7.18.1"
+  },
+  "author": "konsept.ch",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "private": true,
   "type": "module",
   "scripts": {
     "start": "nodemon --experimental-specifier-resolution=node src/index.js"
