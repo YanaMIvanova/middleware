@@ -1,9 +1,13 @@
 {
+  "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "dependencies": {
     "cors": "2.8.5",
+    "eslint": "7.29.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
     "express": "4.17.1",
     "node-fetch": "2.6.1",
     "nodemon": "2.0.9",
