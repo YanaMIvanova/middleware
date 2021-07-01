@@ -35,13 +35,13 @@ export const generateEndpoints = ({ app }) => {
             const organizations = await callApi({ path: 'organization/list/recursive' })
             const allUsers = await callApi({ path: 'user' })
             const parentOrg = 'vd-test-filter'
-            const usersInVaud = allUsers.filter(
+            const usersInVaud = allUsers?.filter(
                 ({ mainOrganization: { code: userOrgCode } }) =>
                     userOrgCode === parentOrg ||
                     checkIsOrgDescendantOfParent({ organizations, parentOrg, childOrg: userOrgCode })
             )
 
-            res.json(usersInVaud)
+            res.json(usersInVaud ?? `No users found in ${parentOrg}`)
         } catch (error) {
             console.error(error)
         }
